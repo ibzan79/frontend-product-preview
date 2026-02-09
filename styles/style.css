@@ -1,0 +1,156 @@
+/* Variables */
+:root {
+    /* Colores */
+    --clr-p-green-500: hsl(158, 36%, 37%);
+    --clr-p-green-700: hsl(158, 42%, 18%);
+    --clr-s-black: hsl(212, 21%, 14%);
+    --clr-s-grey: hsl(228, 12%, 48%);
+    --clr-s-cream: hsl(30, 38%, 92%);
+    --clr-s-white: hsl(0, 0%, 100%);
+
+    /* Fuentes */
+    --ff-montserrat: 'Montserrat', sans-serif;
+    --ff-fraunces: 'Fraunces', serif;
+
+    --fs-normal: 1rem;
+    --fs-title: 2.25rem; /* 24px */
+
+    --fw-normal: 500;
+    --fw-title: 700;
+}
+
+/* Body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-montserrat);
+    font-size: var(--fs-normal);
+    color: var(--clr-s-grey);
+    background-color: var(--clr-s-cream);
+
+    font-weight: var(--fw-normal);
+}
+
+/* Main */
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card {
+    max-width: 24rem;
+
+    background-color: var(--clr-s-white);
+
+    border-radius: 0.5rem;
+    overflow: hidden; /* Sirve para que el borde redondeado se aplique correctamente a la imagen */
+}
+
+.perfume-image {
+    width: 100%;
+}
+
+.product-content {
+    padding: 2.2rem;
+}
+
+.product-type {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin: 0 0 1.5rem 0;
+}
+
+.product-content h1 {
+    font-family: var(--ff-fraunces);
+    font-size: var(--fs-title);
+    color: var(--clr-s-black);
+    font-weight: var(--fw-title);
+}
+
+.product-prices {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    gap: 1.2rem;
+}
+
+.product-prices p {
+    margin: 0;
+}
+
+.product-prices p:first-child {
+    color: var(--clr-p-green-500);
+    font-size: var(--fs-title);
+    font-weight: var(--fw-title);
+    font-family: var(--ff-fraunces);
+}
+
+.product-prices p:last-child {
+    text-decoration: line-through;
+    color: var(--clr-s-grey);
+}
+
+.add-to-cart-button {
+    display: flex;
+    justify-content: center;
+    background-color: var(--clr-p-green-500);
+    border-radius: 0.5rem;
+    padding: 1.3rem;
+    gap: 0.8rem;
+}
+
+.add-to-cart-button a {
+    color: var(--clr-s-white);
+    text-decoration: none;
+}
+
+.add-to-cart-button img {
+    width: 1.1rem;
+    height: auto;
+}
+
+/* Reponsive desgin: Desktop version */
+@media (min-width: 768px) {
+    .product-card {
+        display: flex; /* Esto permite que la imagen y el contenido estén en una misma fila */
+        max-width: 42rem;
+    }
+    
+    picture {
+        width: 50%; /* La imagen ocupa la mitad del contenedor .product-card */
+        display: flex; /* Hace que la imagen se centre verticalmente dentro del contenedor */
+    }
+
+    .perfume-image {
+        width: 100%; /* La imagen ocupa todo el ancho del contenedor picture */
+        height: 100%; /* La imagen ocupa todo el alto del contenedor picture */
+        object-fit: cover; /* Esto asegura que la imagen mantenga su proporción y se recorte si es necesario para llenar el espacio */
+    }
+
+    .product-content {
+        display: flex;
+        flex-direction: column;
+        width: 50%; /* El contenido ocupa la otra mitad del contenedor .product-card */
+        box-sizing: border-box; /* Esto hace que el padding se incluya dentro del ancho y alto del elemento */
+    }
+
+    .product-content h1 {
+        margin: 0 0 0.5rem 0;
+    }
+
+    .add-to-cart-button {
+        padding: 1.1rem;
+    }
+}
+
+/* Footer */
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
