@@ -101,6 +101,10 @@ main {
     gap: 0.8rem;
 }
 
+.add-to-cart-button:hover {
+    background-color: var(--clr-p-green-700);
+}
+
 .add-to-cart-button a {
     color: var(--clr-s-white);
     text-decoration: none;
